@@ -1,6 +1,78 @@
-.galerie {
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    border: 3px solid pink;
+.carrousel {
+  position: absolute;
+  transform: scale(0);
+  width: 50%;
+  height: 50%;
+  top: 25%;
+  left: 25%;
+  background-color: rgba(0, 0, 0, 0.1);
+  transition: transform 0.25s ease;
+  z-index: 2;
 }
+
+.carrousel__x {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  padding: 0 10px;
+  background-color: transparent;
+  border: transparent;
+  z-index: 30;
+}
+.carrousel__x .icone_burger {
+  rotate: 45deg;
+  filter: invert(1);
+}
+.carrousel__x .icone_burger .haut {
+  stroke-dashoffset: -68px;
+}
+.carrousel__x .icone_burger .bas {
+  stroke-dashoffset: -68px;
+}
+
+.carrousel--ouvrir {
+  transform: scale(1);
+}
+
+.carrousel__figure {
+  width: 100%;
+  height: 100%;
+}
+
+.carrousel__img {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  margin: 0;
+}
+
+.img--afficher {
+  opacity: 1;
+}
+
+.carrousel__form {
+  position: absolute;
+  width: 16%;
+  bottom: 10%;
+  left: 42%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.carrousel__radio {
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 2px solid white;
+  background-color: transparent;
+}
+
+.carrousel__radio:checked {
+  background-color: white;
+}/*# sourceMappingURL=style.css.map */
