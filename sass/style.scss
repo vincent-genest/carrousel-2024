@@ -1,5 +1,5 @@
 .carrousel {
-    position: absolute;
+    position: fixed;
     transform: scale(0);
     width: 50%;
     height: 50%;
@@ -22,12 +22,14 @@
 
     .icone_burger {
         rotate: 45deg;
-        filter: invert(1);
+
         .haut {
             stroke-dashoffset: -68px;
+            stroke: white;
         }
         .bas {
             stroke-dashoffset: -68px;
+            stroke: white;
         }
     }
 }
@@ -58,9 +60,9 @@
 
 .carrousel__form {
     position: absolute;
-    width: 16%;
-    bottom: 10%;
-    left: calc(50% - 8%);
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     justify-content: space-between;
 }
@@ -68,9 +70,13 @@
     appearance: none;
     width: 15px;
     height: 15px;
+    margin-right: 0.4rem;
     border-radius: 50%;
-    border: 2px solid white;
+    border: 1.5px solid white;
     background-color: transparent;
+    &:last-of-type {
+        margin-right: none;
+    }
 }
 
 .carrousel__radio:checked {

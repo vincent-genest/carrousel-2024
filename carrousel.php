@@ -26,11 +26,18 @@ function eddym_enqueue(){
 
 add_action('wp_enqueue_scripts', 'eddym_enqueue');
 
+/* IMPORTANT
+Dans header.php
+wp_header() juste avant la balise fermeture </head>
+Dans footer.php
+wp_footer() juste avant la balise fermeture </body>
+*/
+
 function genere_html(){
     /////////////////////////////////////// HTML
     // Le conteneur d'une boîte
     
-       $contenu = '<button class="bouton__ouvrir">Ouvrir</button>
+       $contenu = '
        <div class="carrousel">
             <button class="carrousel__x">
                 <svg class="icone_burger icone burger_rotation" viewBox="0 0 100 100">
