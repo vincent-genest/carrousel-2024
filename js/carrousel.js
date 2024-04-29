@@ -10,6 +10,7 @@
     // let galerie__img = galerie.querySelector('img') // première image seulement
 
     let carrousel__figure = document.querySelector(".carrousel__figure");
+
     let galerie__img = galerie.querySelectorAll("img"); // la collection des images de la galerie
 
     let carrousel__form = document.querySelector(".carrousel__form");
@@ -65,6 +66,10 @@
         });
     }
 
+    /**
+     * Ouvrir le carrousel
+     * @param {MouseEvent} e
+     */
     function ouvrir_carrousel(e) {
         let index = e.target.dataset.index;
         let img__affiche__avant = document.querySelector(".carrousel__img.img--afficher");

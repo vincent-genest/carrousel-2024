@@ -9,6 +9,16 @@
   transition: transform 0.25s ease;
   z-index: 2;
 }
+.carrousel::before {
+  content: "";
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
 
 .carrousel__x {
   position: absolute;
@@ -67,12 +77,13 @@
 
 .carrousel__radio {
   appearance: none;
-  width: 15px;
-  height: 15px;
+  width: 13px;
+  height: 13px;
   margin-right: 0.4rem;
   border-radius: 50%;
   border: 1.5px solid white;
   background-color: transparent;
+  z-index: 2;
 }
 .carrousel__radio:last-of-type {
   margin-right: none;
