@@ -32,6 +32,7 @@
 }
 .carrousel__x .icone_burger {
   rotate: 45deg;
+  transition: transform 0.25s ease;
 }
 .carrousel__x .icone_burger .haut {
   stroke-dashoffset: -68px;
@@ -40,6 +41,9 @@
 .carrousel__x .icone_burger .bas {
   stroke-dashoffset: -68px;
   stroke: white;
+}
+.carrousel__x .icone_burger:hover {
+  transform: scale(1.3);
 }
 
 .carrousel--ouvrir {
@@ -73,6 +77,29 @@
   transform: translate(-50%, -50%);
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.carrousel__form button {
+  background-color: transparent;
+  border: none;
+  width: auto;
+  height: auto;
+  color: white;
+  padding: 0;
+  padding-left: 0.5rem;
+  font-size: 1.2rem;
+  transition: transform 0.25s ease;
+}
+.carrousel__form button:hover {
+  transform: scale(1.3);
+}
+
+.carrousel__form button:first-of-type {
+  transform: rotate(180deg);
+}
+.carrousel__form button:first-of-type:hover {
+  transform: rotate(180deg) scale(1.3);
 }
 
 .carrousel__radio {
@@ -84,9 +111,13 @@
   border: 1.5px solid white;
   background-color: transparent;
   z-index: 2;
+  transition: transform 0.25s ease;
 }
 .carrousel__radio:last-of-type {
-  margin-right: none;
+  margin-right: 0;
+}
+.carrousel__radio:hover {
+  transform: scale(1.1);
 }
 
 .carrousel__radio:checked {

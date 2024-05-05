@@ -17,6 +17,14 @@
 
     let index = 0;
 
+    let indexCarrousel = 0;
+
+    // RADIO 1
+    let carrousel__fleche__gauche = document.createElement("button");
+    carrousel__fleche__gauche.innerHTML = "➜";
+    carrousel__fleche__gauche.type = "button";
+    carrousel__form.appendChild(carrousel__fleche__gauche);
+
     for (const elm of galerie__img) {
         creer_image_carrousel(index, elm);
         creer_radio_carrousel(index);
@@ -59,10 +67,7 @@
 
         // Si on choisi le bouton radio, on met la classe img--afficher à l'image correspondanteselon l'index
         radio__bouton.addEventListener("change", function () {
-            let img__affiche__avant = document.querySelector(".carrousel__img.img--afficher");
-            img__affiche__avant.classList.remove("img--afficher");
-            let img__afficher_apres = document.querySelectorAll(".carrousel__img")[index];
-            img__afficher_apres.classList.add("img--afficher");
+            afficherImage(index);
         });
     }
 
@@ -72,10 +77,8 @@
      */
     function ouvrir_carrousel(e) {
         let index = e.target.dataset.index;
-        let img__affiche__avant = document.querySelector(".carrousel__img.img--afficher");
-        img__affiche__avant.classList.remove("img--afficher");
-        let img__afficher_apres = document.querySelectorAll(".carrousel__img")[index];
-        img__afficher_apres.classList.add("img--afficher");
+        indexCarrousel = index;
+        afficherImage(index);
         carrousel.classList.add("carrousel--ouvrir");
 
         //selectionner le bons boutons radio
@@ -83,16 +86,59 @@
         radio__bouton[index].checked = true;
     }
 
-    // on affiche la première image
-    let img__afficher = document.querySelector(".carrousel__img");
-    img__afficher.classList.add("img--afficher");
+    function afficherImage(index) {
+        if ((img__affiche__avant = document.querySelector(".carrousel__img.img--afficher"))) {
+            let img__affiche__avant = document.querySelector(".carrousel__img.img--afficher");
+            img__affiche__avant.classList.remove("img--afficher");
+        }
+        let img__afficher_apres = document.querySelectorAll(".carrousel__img")[index];
+        img__afficher_apres.classList.add("img--afficher");
+    }
 
-    // selectionner le premier bouton radio
-    let radio__bouton = document.querySelector(".carrousel__radio");
-    radio__bouton.checked = true;
+    //Fleche 2
+    let carrousel__fleche__droite = document.createElement("button");
+    carrousel__fleche__droite.innerHTML = "➜";
+    carrousel__fleche__droite.type = "button";
+    carrousel__form.appendChild(carrousel__fleche__droite);
 
     carrousel__x.addEventListener("mousedown", function () {
         // console.log("bouton mousedown ");
         carrousel.classList.remove("carrousel--ouvrir");
     });
+
+    //FLECHES
+    const carrouselImages = document.querySelectorAll(".carrousel__img");
+
+    //index carrousel = l'index de l'image affichée
+
+    carrousel__fleche__gauche.addEventListener("click", () => {
+        if (indexCarrousel > 0) {
+            indexCarrousel--;
+        } else {
+            indexCarrousel = carrouselImages.length - 1;
+        }
+        afficherImageParFleche(indexCarrousel);
+    });
+
+    carrousel__fleche__droite.addEventListener("click", () => {
+        if (indexCarrousel < carrouselImages.length - 1) {
+            indexCarrousel++;
+        } else {
+            indexCarrousel = 0;
+        }
+        afficherImageParFleche(indexCarrousel);
+    });
+
+    function afficherImageParFleche(index) {
+        carrouselImages.forEach((img, i) => {
+            if (i === index) {
+                img.classList.add("img--afficher");
+            } else {
+                img.classList.remove("img--afficher");
+            }
+        });
+
+        let radio__bouton = document.querySelectorAll(".carrousel__radio");
+        radio__bouton[index].checked = true;
+    }
 })();

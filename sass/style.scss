@@ -30,9 +30,9 @@
     background-color: transparent;
     border: transparent;
     z-index: 30;
-
     .icone_burger {
         rotate: 45deg;
+        transition: transform 0.25s ease;
 
         .haut {
             stroke-dashoffset: -68px;
@@ -41,6 +41,9 @@
         .bas {
             stroke-dashoffset: -68px;
             stroke: white;
+        }
+        &:hover {
+            transform: scale(1.3);
         }
     }
 }
@@ -76,7 +79,31 @@
     transform: translate(-50%, -50%);
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
+
+.carrousel__form button {
+    background-color: transparent;
+    border: none;
+    width: auto;
+    height: auto;
+    color: white;
+    padding: 0;
+    padding-left: 0.5rem;
+    font-size: 1.2rem;
+    transition: transform 0.25s ease;
+    &:hover {
+        transform: scale(1.3);
+    }
+}
+
+.carrousel__form button:first-of-type {
+    transform: rotate(180deg);
+    &:hover {
+        transform: rotate(180deg) scale(1.3);
+    }
+}
+
 .carrousel__radio {
     appearance: none;
     width: 13px;
@@ -86,8 +113,12 @@
     border: 1.5px solid white;
     background-color: transparent;
     z-index: 2;
+    transition: transform 0.25s ease;
     &:last-of-type {
-        margin-right: none;
+        margin-right: 0;
+    }
+    &:hover {
+        transform: scale(1.1);
     }
 }
 
