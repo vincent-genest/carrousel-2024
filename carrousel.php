@@ -38,6 +38,7 @@ function genere_html(){
     // Le conteneur d'une boîte
     
        $contenu = '
+      <div class="fond"></div>
        <div class="carrousel">
             <button class="carrousel__x">
                 <svg class="icone_burger icone burger_rotation" viewBox="0 0 100 100">

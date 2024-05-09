@@ -1,3 +1,19 @@
+.fond {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    display: none;
+}
+.fond__afficher {
+    display: block;
+}
+.bloquer__scroll {
+    overflow: hidden;
+}
 .carrousel {
     position: fixed;
     transform: scale(0);
@@ -7,7 +23,7 @@
     left: 25%;
     background-color: rgba(0, 0, 0, 0.1);
     transition: transform 0.25s ease;
-    z-index: 2;
+    z-index: 101;
 
     &::before {
         content: "";

@@ -19,6 +19,10 @@
 
     let indexCarrousel = 0;
 
+    let fond__noir = document.querySelector(".fond");
+
+    let body = document.querySelector("body");
+
     // RADIO 1
     let carrousel__fleche__gauche = document.createElement("button");
     carrousel__fleche__gauche.innerHTML = "➜";
@@ -84,6 +88,9 @@
         //selectionner le bons boutons radio
         let radio__bouton = document.querySelectorAll(".carrousel__radio");
         radio__bouton[index].checked = true;
+
+        fond__noir.classList.add("fond__afficher");
+        body.classList.add("bloquer__scroll");
     }
 
     function afficherImage(index) {
@@ -95,16 +102,19 @@
         img__afficher_apres.classList.add("img--afficher");
     }
 
+    //Fermer le carrousel
+    carrousel__x.addEventListener("mousedown", function () {
+        // console.log("bouton mousedown ");
+        fond__noir.classList.remove("fond__afficher");
+        carrousel.classList.remove("carrousel--ouvrir");
+        body.classList.remove("bloquer__scroll");
+    });
+
     //Fleche 2
     let carrousel__fleche__droite = document.createElement("button");
     carrousel__fleche__droite.innerHTML = "➜";
     carrousel__fleche__droite.type = "button";
     carrousel__form.appendChild(carrousel__fleche__droite);
-
-    carrousel__x.addEventListener("mousedown", function () {
-        // console.log("bouton mousedown ");
-        carrousel.classList.remove("carrousel--ouvrir");
-    });
 
     //FLECHES
     const carrouselImages = document.querySelectorAll(".carrousel__img");
