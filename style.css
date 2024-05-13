@@ -4,7 +4,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.8);
   z-index: 100;
   display: none;
 }
@@ -41,8 +41,8 @@
 
 .carrousel__x {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: -50px;
+  right: -50px;
   cursor: pointer;
   padding: 0 10px;
   background-color: transparent;
@@ -72,16 +72,19 @@
 .carrousel__figure {
   width: 100%;
   height: 100%;
+  position: relative;
 }
 
 .carrousel__img {
   opacity: 0;
   position: absolute;
-  width: 100%;
+  width: auto;
+  max-width: 80vw;
   height: 100%;
   object-fit: cover;
   top: 0;
-  left: 0;
+  left: 50%;
+  transform: translate(-50%);
   margin: 0;
 }
 
@@ -91,7 +94,7 @@
 
 .carrousel__form {
   position: absolute;
-  bottom: 5%;
+  bottom: -20%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
