@@ -94,13 +94,27 @@
         body.classList.add("bloquer__scroll");
     }
 
+    // function afficherImage(index) {
+    //     if ((img__affiche__avant = document.querySelector(".carrousel__img.img--afficher"))) {
+    //         let img__affiche__avant = document.querySelector(".carrousel__img.img--afficher");
+    //         img__affiche__avant.classList.remove("img--afficher");
+    //     }
+
+    //     let img__afficher_apres = document.querySelectorAll(".carrousel__img")[index];
+    //     img__afficher_apres.classList.add("img--afficher");
+    // }
     function afficherImage(index) {
-        if ((img__affiche__avant = document.querySelector(".carrousel__img.img--afficher"))) {
-            let img__affiche__avant = document.querySelector(".carrousel__img.img--afficher");
-            img__affiche__avant.classList.remove("img--afficher");
-        }
-        let img__afficher_apres = document.querySelectorAll(".carrousel__img")[index];
-        img__afficher_apres.classList.add("img--afficher");
+        let imgs = document.querySelectorAll(".carrousel__img");
+        imgs.forEach((img, i) => {
+            if (i == index) {
+                img.classList.add("img--afficher");
+            } else {
+                img.classList.remove("img--afficher");
+            }
+        });
+
+        let radio__bouton = document.querySelectorAll(".carrousel__radio");
+        radio__bouton[index].checked = true;
     }
 
     //Fermer le carrousel
