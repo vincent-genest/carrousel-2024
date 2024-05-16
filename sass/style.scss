@@ -16,12 +16,14 @@
 }
 .carrousel {
     position: fixed;
-    transform: scale(0);
+    display: none;
+
+    // transform: scale(0);
     width: 50%;
     height: 50%;
     top: 25%;
     left: 25%;
-    transition: transform 0.25s ease;
+    // transition: transform 0.25s ease;
     z-index: 101;
 
     &::before {
@@ -63,16 +65,20 @@
     }
 }
 
-.carrousel--ouvrir {
-    transform: scale(1);
-}
-
 .carrousel__figure {
     width: 100%;
     height: 100%;
     position: relative;
+    transform: scale(0);
+    transition: transform 0.25s ease;
 }
 
+.carrousel--ouvrir {
+    transform: scale(1);
+}
+.carrousel--ouvert {
+    display: block;
+}
 .carrousel__img {
     opacity: 0;
     position: absolute;

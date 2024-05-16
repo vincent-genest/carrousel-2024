@@ -83,7 +83,8 @@
         let index = e.target.dataset.index;
         indexCarrousel = index;
         afficherImage(index);
-        carrousel.classList.add("carrousel--ouvrir");
+        carrousel.classList.add("carrousel--ouvert");
+        setTimeout(ouvrirCarrousel, 50);
 
         //selectionner le bons boutons radio
         let radio__bouton = document.querySelectorAll(".carrousel__radio");
@@ -105,10 +106,20 @@
     //Fermer le carrousel
     carrousel__x.addEventListener("mousedown", function () {
         // console.log("bouton mousedown ");
-        fond__noir.classList.remove("fond__afficher");
-        carrousel.classList.remove("carrousel--ouvrir");
+        carrousel__figure.classList.remove("carrousel--ouvrir");
+        //carrousel__figure.classList.add("carrousel--fermer");
+        setTimeout(fermerCarrousel, 250);
         body.classList.remove("bloquer__scroll");
     });
+
+    function ouvrirCarrousel() {
+        carrousel__figure.classList.add("carrousel--ouvrir");
+    }
+    function fermerCarrousel() {
+        fond__noir.classList.remove("fond__afficher");
+        carrousel.classList.remove("carrousel--ouvert");
+        // carrousel__figure.classList.remove("carrousel--fermer");
+    }
 
     //Fleche 2
     let carrousel__fleche__droite = document.createElement("button");
