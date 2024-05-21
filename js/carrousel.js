@@ -152,7 +152,7 @@
         } else {
             indexCarrousel = carrouselImages.length - 1;
         }
-        afficherImageParFleche(indexCarrousel);
+        afficherImageParFleche(indexCarrousel, "gauche");
     });
 
     carrousel__fleche__droite.addEventListener("click", () => {
@@ -161,15 +161,31 @@
         } else {
             indexCarrousel = 0;
         }
-        afficherImageParFleche(indexCarrousel);
+        afficherImageParFleche(indexCarrousel, "droite");
     });
 
-    function afficherImageParFleche(index) {
+    function afficherImageParFleche(index, direction) {
+        // carrouselImages.forEach((img, i) => {
+        //     if (i === index) {
+        //         img.classList.add("img--afficher");
+        //     } else {
+        //         img.classList.remove("img--afficher");
+        //     }
+        // });
         carrouselImages.forEach((img, i) => {
+            img.classList.remove("img--gauche");
+            img.classList.remove("img--droite");
+            if (img.classList.contains("img--afficher")) {
+                if (direction === "gauche") {
+                    img.classList.add("img--gauche");
+                } else {
+                    img.classList.add("img--droite");
+                }
+            } else {
+            }
+            img.classList.remove("img--afficher");
             if (i === index) {
                 img.classList.add("img--afficher");
-            } else {
-                img.classList.remove("img--afficher");
             }
         });
 
