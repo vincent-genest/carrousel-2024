@@ -92,17 +92,19 @@
     margin: 0;
     transition: opacity 0.5s ease-in-out, transform 1s ease-in-out;
 }
-
+.carrousel .img--transition {
+    transition: opacity 0.5s ease-in-out, transform 0s ease-in-out;
+}
 .img--afficher {
     opacity: 1;
 }
 
 .img--gauche {
-    transform: translate(-400%);
+    transform: translate(50vw);
 }
 
 .img--droite {
-    transform: translate(400%);
+    transform: translate(-50vw);
 }
 
 .carrousel__form {

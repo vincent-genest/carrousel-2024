@@ -106,6 +106,10 @@
     function afficherImage(index) {
         let imgs = document.querySelectorAll(".carrousel__img");
         imgs.forEach((img, i) => {
+            img.classList.remove("img--gauche");
+            img.classList.remove("img--droite");
+            img.classList.remove("img--transition");
+            indexCarrousel = index;
             if (i == index) {
                 img.classList.add("img--afficher");
             } else {
@@ -165,26 +169,30 @@
     });
 
     function afficherImageParFleche(index, direction) {
-        // carrouselImages.forEach((img, i) => {
-        //     if (i === index) {
-        //         img.classList.add("img--afficher");
-        //     } else {
-        //         img.classList.remove("img--afficher");
-        //     }
-        // });
+        if (direction === "gauche") {
+            ancienneDirection = "gauche";
+        } else {
+            ancienneDirection = "droite";
+        }
         carrouselImages.forEach((img, i) => {
+            //On enleve la classe img--gauche ou img--droite a tous
             img.classList.remove("img--gauche");
             img.classList.remove("img--droite");
+            img.classList.remove("img--transition");
+
+            //L'image actuellement affichée est déplacée à gauche ou à droite
             if (img.classList.contains("img--afficher")) {
-                if (direction === "gauche") {
-                    img.classList.add("img--gauche");
-                } else {
-                    img.classList.add("img--droite");
-                }
-            } else {
+                img.classList.add("img--" + direction);
             }
+
+            //On enleve la classe img--afficher à tous
             img.classList.remove("img--afficher");
+
+            //On affiche l'image correspondante à l'index
             if (i === index) {
+                img.classList.add("img--transition");
+                img.classList.remove("img--gauche");
+                img.classList.remove("img--droite");
                 img.classList.add("img--afficher");
             }
         });
