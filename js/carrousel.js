@@ -204,7 +204,6 @@
                 img.classList.remove("img--gauche");
                 img.classList.remove("img--droite");
                 img.classList.add("img--afficher");
-                carrousel__x.style.right = "-" + img.width / 4 + "px";
             }
         });
         let radio__bouton = document.querySelectorAll(".carrousel__radio");
