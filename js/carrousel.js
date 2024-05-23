@@ -121,6 +121,16 @@
         radio__bouton[index].checked = true;
     }
 
+    // Si on clique sur le fond noir, on ferme le carrousel
+
+    fond__noir.addEventListener("click", function () {
+        // console.log("fond noir click");
+        carrousel__figure.classList.remove("carrousel--ouvrir");
+        //carrousel__figure.classList.add("carrousel--fermer");
+        setTimeout(fermerCarrousel, 250);
+        body.classList.remove("bloquer__scroll");
+    });
+
     //Fermer le carrousel
     carrousel__x.addEventListener("mousedown", function () {
         // console.log("bouton mousedown ");
