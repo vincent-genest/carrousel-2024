@@ -26,16 +26,33 @@ function eddym_enqueue(){
 
 add_action('wp_enqueue_scripts', 'eddym_enqueue');
 
+/* IMPORTANT
+Dans header.php
+wp_header() juste avant la balise fermeture </head>
+Dans footer.php
+wp_footer() juste avant la balise fermeture </body>
+*/
+
 function genere_html(){
     /////////////////////////////////////// HTML
     // Le conteneur d'une boîte
     
-       $contenu = 
-       '<button class="bouton__ouvrir">Ouvrir</button>
+       $contenu = '
+      <div class="fond"></div>
        <div class="carrousel">
-        <button class="carrousel__x">X</button>
         <figure class="carrousel__figure"></figure>
-        <form class="carrousel__form"></form>
+        <form class="carrousel__form">
+        </form>
+        <button class="carrousel__x">
+            <svg class="icone_burger icone burger_rotation" viewBox="0 0 100 100">
+                <path
+                  class="trait haut"
+                  d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20" />
+                <path
+                  class="trait bas"
+                  d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20" />
+            </svg>
+        </button>
        </div>';
        return $contenu;
 }
