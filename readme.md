@@ -1,4 +1,4 @@
-# TP2 Plug In
+# TP2 Plug In Carrousel
 
 ## Auteur
 
@@ -15,6 +15,8 @@ Le plugin de carrousel est conçu pour afficher des images dans un format de car
 -   Affichage d'images dans un carrousel interactif
 -   Crée des points pour naviguer facilement
 -   Ouvrable avec un clic sur les images
+-   Fermable avec le bouton x o en cliquant sur le fond
+-   Adaptable
 
 ## Installation
 
