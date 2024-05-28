@@ -14,6 +14,7 @@
     let galerie__img = galerie.querySelectorAll("img"); // la collection des images de la galerie
 
     let carrousel__form = document.querySelector(".carrousel__form");
+    let carrousel__conteneur__boutons = document.querySelector(".conteneur__boutons");
 
     let index = 0;
 
@@ -27,7 +28,8 @@
     let carrousel__fleche__gauche = document.createElement("button");
     carrousel__fleche__gauche.innerHTML = "➜";
     carrousel__fleche__gauche.type = "button";
-    carrousel__form.appendChild(carrousel__fleche__gauche);
+    // carrousel__form.appendChild(carrousel__fleche__gauche);
+    carrousel__form.insertBefore(carrousel__fleche__gauche, carrousel__conteneur__boutons);
 
     for (const elm of galerie__img) {
         creer_image_carrousel(index, elm);
@@ -67,7 +69,7 @@
         radio__bouton.setAttribute("name", "carrousel__radio");
 
         radio__bouton.classList.add("carrousel__radio");
-        carrousel__form.appendChild(radio__bouton);
+        carrousel__conteneur__boutons.appendChild(radio__bouton);
 
         // Si on choisi le bouton radio, on met la classe img--afficher à l'image correspondanteselon l'index
         radio__bouton.addEventListener("change", function () {
