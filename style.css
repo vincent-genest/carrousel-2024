@@ -116,12 +116,31 @@
 
 .carrousel__form {
   position: absolute;
-  bottom: -20%;
+  bottom: -30%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 80vw;
+}
+@media screen and (min-width: 768px) {
+  .carrousel__form {
+    width: auto;
+    bottom: -20%;
+  }
+}
+
+.conteneur__boutons {
+  display: inline-flex;
+  width: auto;
+  max-width: 80vw;
+  flex-wrap: wrap;
+}
+@media screen and (min-width: 768px) {
+  .conteneur__boutons {
+    flex-wrap: nowrap;
+  }
 }
 
 .carrousel__form button {
@@ -150,15 +169,12 @@
   appearance: none;
   width: 13px;
   height: 13px;
-  margin-right: 0.4rem;
+  margin: 0.2rem;
   border-radius: 50%;
   border: 1.5px solid white;
   background-color: transparent;
   z-index: 2;
   transition: transform 0.25s ease;
-}
-.carrousel__radio:last-of-type {
-  margin-right: 0;
 }
 .carrousel__radio:hover {
   transform: scale(1.1);

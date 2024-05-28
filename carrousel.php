@@ -42,6 +42,7 @@ function genere_html(){
        <div class="carrousel">
         <figure class="carrousel__figure"></figure>
         <form class="carrousel__form">
+        
         </form>
         <button class="carrousel__x">
             <svg class="icone_burger icone burger_rotation" viewBox="0 0 100 100">
